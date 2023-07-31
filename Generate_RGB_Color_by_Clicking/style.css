@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Open Sans', sans-serif;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Open Sans',  sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+.text p{
+    font-size: 18px;
+    background-color: rgb(64, 94, 158);
+    color: rgb(251, 255, 255);
+    padding: 10px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.text{
+    border: 2px solid  rgb(64, 94, 158);
+    padding: 3px;
+    border-radius: 5px;
+}
