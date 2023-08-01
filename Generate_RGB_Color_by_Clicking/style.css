@@ -25,3 +25,8 @@ body{
     padding: 3px;
     border-radius: 5px;
 }
+.colorPic{
+    text-align: center;
+    margin: 7px;
+   color: aliceblue;
+}
