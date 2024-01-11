@@ -1,14 +1,22 @@
 let button = document.querySelector('.text');
 let body = document.querySelector('body');
 let colorName = document.querySelector('.colorPic');
-
+let copybtn = document.querySelector('.copy-btn');
+let coppid = document.querySelector('.coppid');
 
 
 button.addEventListener('click', ()=>{
-  let color =  generateColor();
-  body.style.backgroundColor = color;
- colorName.textContent = color;
- console.log(color);
+    let color =  generateColor();
+    body.style.backgroundColor = color;
+    colorName.value = color;
+    console.log(color);
+})
+
+copybtn.addEventListener('click', ()=>{
+     navigator.clipboard.writeText(colorName.value);
+     copybtn.textContent = "";
+     copybtn.textContent = 'coppid';
+
 })
 
 function generateColor(){

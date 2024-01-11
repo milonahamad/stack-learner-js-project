@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGB color generate</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RandomColor</title>
+  <style>
+    body{
+      height: 100vh;
+      font-family:  'Open Sans', 'Helvetica Neue', sans-serif;
+      /* background-color: #050505; */
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h2{
+      color: #444444;
+      text-transform: capitalize;
+      font-size: 20px;
+      text-align: center;
+    }
+    .btn{
+      padding: 8px 25px;
+      border: 2px solid seagreen;
+      border-radius: 2px;
+      font-size: 15px;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      cursor: pointer;
+      white-space: nowrap;
+      background: transparent;
+      color: #444444;
+    }
+    .btn:hover{
+      border: 2px solid seagreen;
+      background:seagreen ;
+      color: aliceblue;
+    }
+  </style>
 </head>
 <body>
-    <div class="main">
-        <div class="colorPic">
-        </div>
-        <div class="text">
-            <p>Change Background Color</p>
-        </div>
-    </div>
-    <script src="app.js"></script>
+  <div class="container" id="root">
+      <h2>
+        change the background color by clicking the following button
+      </h2>
+      <button class="btn">change color</button>
+  </div>
+
+  <script>
+    window.onload = () =>{
+      let root = document.querySelector('#root');
+      let btn = document.querySelector('.btn');
+
+      btn.addEventListener('click', ()=>{
+        let red = Math.floor(Math.random() * 255)
+        let green = Math.floor(Math.random() * 255)
+        let blue = Math.floor(Math.random() * 255)
+
+        let rmCol = `rgb(${red},${green},${blue})`
+          root.style.backgroundColor = rmCol;
+
+        // let time = setInterval(()=>{
+        
+        //   console.log(rmCol)
+        // },2000);
+
+      });
+    }
+
+
+
+
+  </script>
+
+
 </body>
 </html>
