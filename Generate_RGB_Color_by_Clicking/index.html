@@ -42,6 +42,16 @@
       background:seagreen ;
       color: aliceblue;
     }
+    input[type="text"],
+    input[type="text"]:disabled{
+      background-color:transparent;
+      color: #444444;
+      border:2px solid #000;
+      padding: 5px 0px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -49,6 +59,7 @@
       <h2>
         change the background color by clicking the following button
       </h2>
+      <input type="text" disabled value="#444444" id="output">
       <button class="btn">change color</button>
   </div>
 
@@ -56,20 +67,17 @@
     window.onload = () =>{
       let root = document.querySelector('#root');
       let btn = document.querySelector('.btn');
+      let display = document.querySelector('#output') 
 
       btn.addEventListener('click', ()=>{
         let red = Math.floor(Math.random() * 255)
         let green = Math.floor(Math.random() * 255)
         let blue = Math.floor(Math.random() * 255)
 
-        let rmCol = `rgb(${red},${green},${blue})`
+        let rmCol = `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`
           root.style.backgroundColor = rmCol;
-
-        // let time = setInterval(()=>{
-        
-        //   console.log(rmCol)
-        // },2000);
-
+          display.value = rmCol;
+          console.log(rmCol);
       });
     }
 
